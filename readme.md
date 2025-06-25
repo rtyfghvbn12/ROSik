@@ -142,6 +142,18 @@ source install/setup.bash
 Настройки RVIZ в файле `esp32_bridge/config/rviz.rviz`
 ![Работа навигации](/images/nav.png)
 
+## Установка и запуск ноды джостика
+**ЕСЛИ ЗАПУСК ЧЕРЕЗ WSL ТО НУЖНО ПРОБРОСИТЬ ПОРТЫ**
+```powershell
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=13379 connectaddress=<WSL_IP, посмотреть в самой wsl> connectport=13379
+New-NetFirewallRule -DisplayName "WSL HTTP" -Direction Inbound -Action Allow -Protocol TCP -LocalPort <PORT>
+```
+В самой wsl надо запустить ноду
+```shell
+ros2 run web_joystick web
+```
+![Работа джостика](/images/Joystick.gif)
+
 ## GIF - демонстрация движения в автономном режиме
 ![Работа навигации](/images/ROSIK_nav.gif)
 
