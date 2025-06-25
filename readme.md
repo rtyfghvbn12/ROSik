@@ -153,6 +153,7 @@ New-NetFirewallRule -DisplayName "WSL HTTP" -Direction Inbound -Action Allow -Pr
 ros2 run web_joystick web
 ```
 ![Работа джостика](/images/Joystick.gif)
+*Джостик будет доступен на <ip компьютера>:13379*
 
 ## GIF - демонстрация движения в автономном режиме
 ![Работа навигации](/images/ROSIK_nav.gif)
