@@ -143,7 +143,7 @@ source install/setup.bash
 ![Работа навигации](/images/nav.png)
 
 ## Установка и запуск ноды джостика
-**ЕСЛИ ЗАПУСК ЧЕРЕЗ WSL ТО НУЖНО ПРОБРОСИТЬ ПОРТЫ**
+**ЕСЛИ ЗАПУСК ЧЕРЕЗ WSL ТО НУЖНО ПРОБРОСИТЬ ПОРТЫ в powershell с правами админа**
 ```powershell
 netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=13379 connectaddress=<WSL_IP, посмотреть в самой wsl> connectport=13379
 New-NetFirewallRule -DisplayName "WSL HTTP" -Direction Inbound -Action Allow -Protocol TCP -LocalPort <PORT>
